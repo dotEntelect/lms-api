@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1434;databaseName=LMS_Database;encrypt=true;trustServerCertificate=true;
+    username: demo_sa
+    password: demo/SA901130
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.SQLServer2016Dialect
+    show-sql: true
+    defer-datasource-initialization: true # https://stackoverflow.com/questions/68711396/org-springframework-beans-factory-beancreationexception-error-creating-bean-wit
+  security:
+    jwt:
+      secret-key: 6D5971337336763979244226452948404D635166546A576E5A7234753777217A
+      expiration-time: 86400000
